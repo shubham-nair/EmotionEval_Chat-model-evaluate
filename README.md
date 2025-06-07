@@ -57,9 +57,3 @@ Field explanations are available in the code comments.
 
 * Ideal for evaluating conversational AI models in companion, wellness, or psychological support scenarios
 * Enables automated large-scale experiments, model deployment decisions, and continuous A/B optimization
-
----
-
-**Feel free to open issues, pull requests, or discuss business collaboration!**
-
-```
