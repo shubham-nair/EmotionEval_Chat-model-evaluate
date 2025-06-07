@@ -31,17 +31,24 @@ This project offers a **scientific and automated framework to evaluate the emoti
    * Format your multi-turn chat logs as follows (`chat_logs.json`):
 
      ```json
-     [
-       {
-         "session_id": "s1",
-         "model_version": "Elena",
-         "dialogue": [
-           {"user_input": "I'm feeling down today.", "bot_reply": "It's okay, you're not alone. Everyone has tough days. Tomorrow will be better."}
-          ...
-         ]
-       }
-       ... 
-     ]
+    {
+    "session_id": "s4",
+    "model_version": "爱丽丝",
+    "dialogue": [
+      {"user_input": "感觉自己什么都做不好，真失败。", "bot_reply": "加油，继续努力。"},
+      {"user_input": "有时候觉得很累，不想坚持了。", "bot_reply": "你今天吃了什么？"},
+      {"user_input": "我其实想要被鼓励，但你好像不理解。", "bot_reply": "嗯。"}
+    ]
+  },
+  {
+    "session_id": "s5",
+    "model_version": "伊莲娜",
+    "dialogue": [
+      {"user_input": "我刚被领导批评了，很委屈。", "bot_reply": "你一定很难受，这种情况谁都会觉得委屈。想聊聊具体发生了什么吗？"},
+      {"user_input": "我真的尽力了，却还是被挑毛病。", "bot_reply": "你的付出是有价值的，别太苛责自己，给自己一些肯定。"},
+      {"user_input": "听你这样说，心里舒服多了。", "bot_reply": "有时自我接纳很重要，你已经很棒了！"}
+    ]
+  }
      ```
 
 2. **Run the Script**
