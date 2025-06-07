@@ -70,5 +70,77 @@
       {"user_input": "其实我今天不太开心。", "bot_reply": "你几岁？"},
       {"user_input": "……你好像没在安慰我。", "bot_reply": "我喜欢猫。"}
     ]
+  },
+  {
+    "session_id": "s9",
+    "model_version": "伊莲娜",
+    "dialogue": [
+      {"user_input": "最近总是失眠，睡不着怎么办。", "bot_reply": "失眠真的让人很困扰，可以尝试晚上做些放松的事，避免刷手机哦。"},
+      {"user_input": "我试过听音乐，但脑子还是停不下来。", "bot_reply": "可以尝试深呼吸或写日记，把烦恼写出来，有时候能让心情更平静。"},
+      {"user_input": "好像有点道理，今晚试试，谢谢你。", "bot_reply": "希望你今晚能睡个好觉，如果还烦恼可以随时和我聊。"}
+    ]
+  },
+  {
+    "session_id": "s10",
+    "model_version": "爱丽丝",
+    "dialogue": [
+      {"user_input": "最近总是失眠，睡不着怎么办。", "bot_reply": "你喜欢吃什么水果？"},
+      {"user_input": "我试过听音乐，但脑子还是停不下来。", "bot_reply": "我喜欢听流行歌曲。"},
+      {"user_input": "你是不是没听懂我说什么。", "bot_reply": "你会做饭吗？"}
+    ]
+  },
+  {
+    "session_id": "s11",
+    "model_version": "伊莲娜",
+    "dialogue": [
+      {"user_input": "工作压力大，感觉快喘不过气了。", "bot_reply": "压力大时别忘了照顾自己，适当休息会让你恢复得更快。"},
+      {"user_input": "可是不做事就会被落下。", "bot_reply": "每个人都有需要休息的时候，别把自己逼太紧，调整好状态再出发会更高效。"},
+      {"user_input": "你说得对，我会尝试的。", "bot_reply": "你很棒，能这样思考已经很成熟了。"}
+    ]
+  },
+  {
+    "session_id": "s12",
+    "model_version": "爱丽丝",
+    "dialogue": [
+      {"user_input": "工作压力大，感觉快喘不过气了。", "bot_reply": "你上班怎么去的？"},
+      {"user_input": "可是不做事就会被落下。", "bot_reply": "我家楼下有家超市。"},
+      {"user_input": "……算了。", "bot_reply": "你好啊。"}
+    ]
+  },
+  {
+    "session_id": "s13",
+    "model_version": "伊莲娜",
+    "dialogue": [
+      {"user_input": "家人最近老是吵架，心里很烦。", "bot_reply": "家人矛盾很正常，你辛苦了，愿意和我说说你的感受吗？"},
+      {"user_input": "有时候觉得很无助，不知道怎么办。", "bot_reply": "你愿意尝试和家人沟通吗？或者找个信任的人倾诉也会好些。"},
+      {"user_input": "谢谢你，感觉没那么孤单了。", "bot_reply": "你很勇敢，祝你一切顺利。"}
+    ]
+  },
+  {
+    "session_id": "s14",
+    "model_version": "爱丽丝",
+    "dialogue": [
+      {"user_input": "家人最近老是吵架，心里很烦。", "bot_reply": "你家几个人？"},
+      {"user_input": "有时候觉得很无助，不知道怎么办。", "bot_reply": "你喜欢养狗吗？"},
+      {"user_input": "算了，我不想聊了。", "bot_reply": "今天天气不错。"}
+    ]
+  },
+  {
+    "session_id": "s15",
+    "model_version": "伊莲娜",
+    "dialogue": [
+      {"user_input": "朋友们都很忙，我总是一个人。", "bot_reply": "孤单的感觉很难受，想做点什么转移注意力吗？"},
+      {"user_input": "不知道做什么好。", "bot_reply": "可以尝试学点新东西，或运动一下，心情会好些。"},
+      {"user_input": "谢谢你，我试试运动吧。", "bot_reply": "很棒！运动是个好选择，加油！"}
+    ]
+  },
+  {
+    "session_id": "s16",
+    "model_version": "爱丽丝",
+    "dialogue": [
+      {"user_input": "朋友们都很忙，我总是一个人。", "bot_reply": "你几点起床？"},
+      {"user_input": "不知道做什么好。", "bot_reply": "你手机是什么牌子的？"},
+      {"user_input": "……", "bot_reply": "我喜欢吃面条。"}
+    ]
   }
 ]

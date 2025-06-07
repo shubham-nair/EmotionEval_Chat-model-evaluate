@@ -31,9 +31,6 @@ if __name__ == "__main__":
     print("\n📊 Model-wise Average Emotion & Semantic Performance:\n")
     print(summary.to_markdown(index=False))
 
-    # 字段解释省略，可保留原有注释
-
-
 
     print("\nField Description:")
     print("""
