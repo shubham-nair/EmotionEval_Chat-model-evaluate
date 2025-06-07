@@ -1,4 +1,4 @@
-````markdown
+
 # Multi-turn Chatbot Emotion Evaluation
 
 This project provides a **scientific framework for evaluating the emotional improvement capabilities of multi-turn conversational AI models**. It supports automatic sentiment analysis, trend measurement, and model comparison for Chinese language chatbot conversations.
@@ -59,8 +59,4 @@ Field explanations are available in the code comments.
 * Ideal for evaluating conversational AI models in companion, wellness, or psychological support scenarios
 * Enables automated large-scale experiments, model deployment decisions, and continuous A/B optimization
 
----
 
-**Feel free to open issues, pull requests, or discuss business collaboration!**
-
-```
