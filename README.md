@@ -22,6 +22,7 @@ This project provides a **scientific framework for evaluating the emotional impr
 
 1. **Prepare Data**  
    Save your multi-turn chat data in the following structure as `chat_logs.json`:
+   
    ```json
    [
      {
@@ -34,7 +35,7 @@ This project provides a **scientific framework for evaluating the emotional impr
      }
      // ... more sessions
    ]
-````
+```
 
 2. **Run the Analysis Script**
 
