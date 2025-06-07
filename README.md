@@ -72,6 +72,18 @@ python main.py
 | Alice          | 0.5851  | 0.6115         | 0.5620      | -0.0275        | 0.1555           | 0.6968           | 0.6419         | 0.5873              | 4     |
 
 
+| Field            | Description                                        |
+|------------------|---------------------------------------------------|
+| model_version    | Name of chatbot/model                             |
+| f1_avg           | BERTScore F1 (semantic similarity, higher=better) |
+| precision_avg    | BERTScore Precision (average)                     |
+| recall_avg       | BERTScore Recall (average)                        |
+| emotion_slope    | Slope of emotion trend (positive=improvement)     |
+| cumulative_gain  | Cumulative positive emotion gain                  |
+| start_sentiment  | Initial user sentiment                            |
+| end_sentiment    | Final user sentiment                              |
+| avg_bot_sentiment| Avg. bot reply sentiment                          |
+| count            | Sessions per model  
 
 ## ⚡️ Why Spark?
 
