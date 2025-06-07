@@ -2,83 +2,71 @@
 
 # Multi-turn Chatbot Emotion & Semantic Evaluation
 
-This project offers a **scientific and automated framework to evaluate the emotional impact and semantic quality of multi-turn conversational AI models**. It is designed for the Chinese language, focusing on both user emotion uplift and response relevance.
+This project provides an **enterprise-grade, automated evaluation pipeline for multi-turn conversational AI models**, tailored for Chinese-language chatbots. By leveraging PySpark for scalable distributed processing, it enables both scientific benchmarking and business-oriented insight into user emotional uplift and conversational quality.
+
 
 
 ## 🚀 Overview
 
-* **Session-based analysis**: Score each user message and bot reply in multi-turn conversations.
-* **Comprehensive metrics**: Assess emotional improvement, trend, and semantic alignment for every model.
-* **Automated benchmarking**: Compare multiple chatbot versions for business and research purposes.
+* **Production-scale analytics**: Uses [Apache Spark](https://spark.apache.org/) to efficiently process and evaluate large volumes of chat logs across multiple models or experiments.
+* **Session-level diagnostics**: Measures both user and bot behaviors on a per-session basis, supporting granular emotional and semantic analysis.
+* **Robust benchmarking**: Aggregates statistics for model comparison, A/B test tracking, and continuous deployment decision-making.
 
 
-## 🔑 Features
 
-* **Sentiment Scoring**: Uses [SnowNLP](https://github.com/isnowfy/snownlp) for fine-grained emotion analysis (`0 = negative`, `1 = positive`).
-* **Semantic Metrics**: Uses [BERTScore](https://github.com/Tiiiger/bert_score) to measure response relevance (precision, recall, F1).
-* **Trend Analysis**:
+## 🔑 Key Features
 
-  * `emotion_slope`: Slope of user sentiment over time (higher = positive improvement).
-  * `cumulative_gain`: Sum of all positive sentiment changes in a session.
-  * `avg_bot_sentiment`: Average emotional tone of bot replies.
-* **Model Comparison**: Aggregated statistics for objective evaluation across models.
+* **Distributed Sentiment Analysis**: Employs [SnowNLP](https://github.com/isnowfy/snownlp) to score user and bot utterances (`0 = negative`, `1 = positive`) in a scalable, parallelized Spark environment.
+* **Semantic Relevance Metrics**: Applies [BERTScore](https://github.com/Tiiiger/bert_score) for in-depth semantic similarity (Precision, Recall, F1), capturing the alignment between user input and bot response.
+* **Session-level Trends**:
 
-## 🛠 How to Use
+  * `emotion_slope`: Measures change in user sentiment per session, highlighting emotional improvement or deterioration.
+  * `cumulative_gain`: Quantifies total positive emotional changes, reflecting the chatbot's real-world emotional impact.
+  * `avg_bot_sentiment`: Captures the emotional tone of the bot's replies.
+* **Automated Model Comparison**: Generates aggregated performance reports to enable objective cross-model or version comparison for both business and research.
 
-1. **Prepare Data**
 
-   Save your multi-turn chat data as `chat_logs.json` in the following format:
 
-   ```json
-   [
-     {
-       "session_id": "s4",
-       "model_version": "Alice",
-       "dialogue": [
-         {
-           "user_input": "I feel like I can't do anything right. I'm such a failure.",
-           "bot_reply": "Keep going, don't give up."
-         },
-         {
-           "user_input": "Sometimes I just feel so tired, I don't want to keep trying.",
-           "bot_reply": "What did you eat today?"
-         },
-         {
-           "user_input": "I actually want to be encouraged, but you don't seem to understand.",
-           "bot_reply": "Hmm."
-         }
-       ]
-     },
-     {
-       "session_id": "s5",
-       "model_version": "Elena",
-       "dialogue": [
-         {
-           "user_input": "My boss criticized me just now. I feel so wronged.",
-           "bot_reply": "You must feel terrible. Anyone would feel upset in that situation. Do you want to talk about what happened?"
-         },
-         {
-           "user_input": "I really tried my best, but they still picked on me.",
-           "bot_reply": "Your efforts are valuable. Don't be too hard on yourself, give yourself some credit."
-         },
-         {
-           "user_input": "Hearing you say that makes me feel much better.",
-           "bot_reply": "Sometimes self-acceptance is important. You're already doing great!"
-         }
-       ]
-     }
-   ]
+## 🛠 Usage
 
-2. **Run the Script**
+### 1. Data Preparation
 
-   ```bash
-   python main.py
-   ```
+Prepare your multi-turn conversation logs as a JSON array (`chat_logs.json`), each record containing:
 
-3. **Review the Output**
+```json
+{
+  "session_id": "s4",
+  "model_version": "Alice",
+  "dialogue": [
+    { "user_input": "I'm feeling down today.", "bot_reply": "I'm here for you." },
+    ...
+  ]
+}
+```
 
-   * The script prints per-session and per-model statistics in the terminal.
-   * Optionally, export the results to CSV for business reporting or further analysis.
+### 2. Run the Evaluation Pipeline
+
+You can run the end-to-end analysis script with:
+
+```bash
+python main.py
+```
+
+This will automatically convert input to Spark-compatible JSON lines, launch PySpark, and execute distributed computation.
+
+### 3. Review Results
+
+* **Per-session**: Detailed metrics per dialogue session, including emotion trend and semantic quality.
+* **Per-model aggregation**: Grouped statistics (mean, count) for each model version, suitable for business dashboarding or experiment tracking.
+* **Output**: Results can be saved as Parquet or CSV for integration with BI tools or further analytics.
+
+
+
+## ⚡️ Spark-Powered Scalability
+
+* **Big data ready**: Efficiently processes millions of chat sessions in parallel, making it ideal for real-world production or research datasets.
+* **Cluster/Cloud deployment**: Seamlessly integrates with Hadoop, YARN, Kubernetes, AWS EMR, or Databricks for enterprise-scale analytics.
+* **Extensible**: Easily supports additional metrics (e.g., coherence, custom intent detection) via Spark UDFs.
 
 
 
@@ -105,7 +93,17 @@ This project offers a **scientific and automated framework to evaluate the emoti
 | count               | Number of sessions per model                           |
 
 
-## 💡 Business Scenarios
 
-* **Ideal for evaluating conversational AI models in companion, wellness, or psychological support scenarios**
-* **Enables automated large-scale experiments, model deployment decisions, and continuous A/B optimization**
+## 💡 Business & Research Applications
+
+* **Conversational AI product evaluation**: Essential for companion, wellness, or psychological support bots where emotional impact matters.
+* **Large-scale model benchmarking**: Enables robust A/B/N experiments, model release validation, and regression detection.
+* **Automated reporting**: Supports integration with BI dashboards (e.g., Metabase, Tableau) for executive or research monitoring.
+* **Continuous optimization**: Designed for daily/weekly pipeline runs, enabling ongoing model and product improvement.
+
+
+
+## 🌏 Why Spark?
+
+By leveraging PySpark, this project overcomes the scale and speed limitations of local scripts, unlocking real-time analytics and automated insights for both small and massive chatbot datasets. **Deploy once, scale on demand**—no change needed for single-machine prototyping or production-grade distributed analytics.
+
