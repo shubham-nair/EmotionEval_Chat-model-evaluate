@@ -23,7 +23,7 @@ This project offers a **scientific and automated framework to evaluate the emoti
   * `avg_bot_sentiment`: Average emotional tone of bot replies.
 * **Model Comparison**: Aggregated statistics for objective evaluation across models.
 
-
+## 🛠 How to Use
 
 1. **Prepare Data**
 
