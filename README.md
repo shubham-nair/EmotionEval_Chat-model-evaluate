@@ -1,4 +1,4 @@
-
+````markdown
 # Multi-turn Chatbot Emotion Evaluation
 
 This project provides a **scientific framework for evaluating the emotional improvement capabilities of multi-turn conversational AI models**. It supports automatic sentiment analysis, trend measurement, and model comparison for Chinese language chatbot conversations.
@@ -28,11 +28,11 @@ This project provides a **scientific framework for evaluating the emotional impr
        "session_id": "s1",
        "model_version": "Elena",
        "dialogue": [
-         {"user_input": "I'm feeling down today.", "bot_reply": "It's okay, you're not alone. Everyone has tough days. Tomorrow will be better."},
-         ...
+         {"user_input": "I'm feeling down today.", "bot_reply": "It's okay, you're not alone. Everyone has tough days. Tomorrow will be better."}
+         // ... more turns
        ]
-     },
-     ...
+     }
+     // ... more sessions
    ]
 ````
 
@@ -41,6 +41,7 @@ This project provides a **scientific framework for evaluating the emotional impr
    ```bash
    python score_chats.py
    ```
+
 3. **Check Results**
    The script prints session-level emotion trend analysis and model-level aggregate results to the terminal. You can also export results to CSV for further analysis or business reporting.
 
@@ -57,3 +58,9 @@ Field explanations are available in the code comments.
 
 * Ideal for evaluating conversational AI models in companion, wellness, or psychological support scenarios
 * Enables automated large-scale experiments, model deployment decisions, and continuous A/B optimization
+
+---
+
+**Feel free to open issues, pull requests, or discuss business collaboration!**
+
+```
