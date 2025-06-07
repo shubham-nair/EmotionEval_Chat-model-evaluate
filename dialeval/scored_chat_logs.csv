@@ -1,0 +1,3 @@
+session_id,model_version,fluency,relevance,humanness
+s1,gpt-4,5,5,5
+s2,gpt-3.5,5,5,5
