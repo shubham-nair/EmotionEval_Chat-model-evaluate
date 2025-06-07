@@ -45,14 +45,27 @@ This project provides a **scientific framework for evaluating the emotional impr
 3. **Check Results**
    The script prints session-level emotion trend analysis and model-level aggregate results to the terminal. You can also export results to CSV for further analysis or business reporting.
 
-## 📊 Example Output
+## 📊 Model-wise Average Emotion & Semantic Performance:
 
-| model\_version | emotion\_slope | cumulative\_gain | start\_sentiment | end\_sentiment | avg\_bot\_sentiment | count |
-| -------------- | -------------- | ---------------- | ---------------- | -------------- | ------------------- | ----- |
-| Elena          | 0.0082         | 0.4589           | 0.6698           | 0.6861         | 0.8604              | 4     |
-| Alice          | -0.0275        | 0.1555           | 0.6968           | 0.6419         | 0.5873              | 4     |
+| model_version   |   f1_avg |   precision_avg |   recall_avg |   emotion_slope |   cumulative_gain |   start_sentiment |   end_sentiment |   avg_bot_sentiment |   count |
+|:----------------|---------:|----------------:|-------------:|----------------:|------------------:|------------------:|----------------:|--------------------:|--------:|
+| 伊莲娜          |   0.6071 |          0.5821 |       0.6353 |          0.0082 |            0.4589 |            0.6698 |          0.6861 |              0.8604 |       4 |
+| 爱丽丝          |   0.5851 |          0.6115 |       0.562  |         -0.0275 |            0.1555 |            0.6968 |          0.6419 |              0.5873 |       4 |
 
-Field explanations are available in the code comments.
+Field Description:
+
+| Field            | Description                                        |
+|------------------|---------------------------------------------------|
+| model_version    | Name of chatbot/model                             |
+| f1_avg           | BERTScore F1 (semantic similarity, higher=better) |
+| precision_avg    | BERTScore Precision (average)                     |
+| recall_avg       | BERTScore Recall (average)                        |
+| emotion_slope    | Slope of emotion trend (positive=improvement)     |
+| cumulative_gain  | Cumulative positive emotion gain                  |
+| start_sentiment  | Initial user sentiment                            |
+| end_sentiment    | Final user sentiment                              |
+| avg_bot_sentiment| Avg. bot reply sentiment                          |
+| count            | Sessions per model       
 
 ## 💡 Business Value
 
