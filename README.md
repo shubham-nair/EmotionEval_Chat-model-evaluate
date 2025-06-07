@@ -31,27 +31,44 @@ This project offers a **scientific and automated framework to evaluate the emoti
    * Format your multi-turn chat logs as follows (`chat_logs.json`):
 
      ```json
-[
+     [
   {
     "session_id": "s4",
     "model_version": "Alice",
     "dialogue": [
-      {"user_input": "I feel like I can't do anything right. I'm such a failure.", "bot_reply": "Keep going, don't give up."},
-      {"user_input": "Sometimes I just feel so tired, I don't want to keep trying.", "bot_reply": "What did you eat today?"},
-      {"user_input": "I actually want to be encouraged, but you don't seem to understand.", "bot_reply": "Hmm."}
+      {
+        "user_input": "I feel like I can't do anything right. I'm such a failure.",
+        "bot_reply": "Keep going, don't give up."
+      },
+      {
+        "user_input": "Sometimes I just feel so tired, I don't want to keep trying.",
+        "bot_reply": "What did you eat today?"
+      },
+      {
+        "user_input": "I actually want to be encouraged, but you don't seem to understand.",
+        "bot_reply": "Hmm."
+      }
     ]
   },
   {
     "session_id": "s5",
     "model_version": "Elena",
     "dialogue": [
-      {"user_input": "My boss criticized me just now. I feel so wronged.", "bot_reply": "You must feel terrible. Anyone would feel upset in that situation. Do you want to talk about what happened?"},
-      {"user_input": "I really tried my best, but they still picked on me.", "bot_reply": "Your efforts are valuable. Don't be too hard on yourself, give yourself some credit."},
-      {"user_input": "Hearing you say that makes me feel much better.", "bot_reply": "Sometimes self-acceptance is important. You're already doing great!"}
+      {
+        "user_input": "My boss criticized me just now. I feel so wronged.",
+        "bot_reply": "You must feel terrible. Anyone would feel upset in that situation. Do you want to talk about what happened?"
+      },
+      {
+        "user_input": "I really tried my best, but they still picked on me.",
+        "bot_reply": "Your efforts are valuable. Don't be too hard on yourself, give yourself some credit."
+      },
+      {
+        "user_input": "Hearing you say that makes me feel much better.",
+        "bot_reply": "Sometimes self-acceptance is important. You're already doing great!"
+      }
     ]
   }
 ]
-
      ```
 
 2. **Run the Script**
