@@ -4,7 +4,6 @@
 
 This project offers a **scientific and automated framework to evaluate the emotional impact and semantic quality of multi-turn conversational AI models**. It is designed for the Chinese language, focusing on both user emotion uplift and response relevance.
 
----
 
 ## 🚀 Overview
 
@@ -12,7 +11,6 @@ This project offers a **scientific and automated framework to evaluate the emoti
 * **Comprehensive metrics**: Assess emotional improvement, trend, and semantic alignment for every model.
 * **Automated benchmarking**: Compare multiple chatbot versions for business and research purposes.
 
----
 
 ## 🔑 Features
 
@@ -25,7 +23,6 @@ This project offers a **scientific and automated framework to evaluate the emoti
   * `avg_bot_sentiment`: Average emotional tone of bot replies.
 * **Model Comparison**: Aggregated statistics for objective evaluation across models.
 
----
 
 ## 🛠 Usage
 
@@ -58,7 +55,7 @@ This project offers a **scientific and automated framework to evaluate the emoti
    * The script prints per-session and per-model statistics in the terminal.
    * Optionally, export the results to CSV for business reporting or further analysis.
 
----
+
 
 ## 📊 Example Output
 
@@ -82,7 +79,6 @@ This project offers a **scientific and automated framework to evaluate the emoti
 | avg\_bot\_sentiment | Average sentiment of all bot replies                   |
 | count               | Number of sessions per model                           |
 
----
 
 ## 💡 Business Scenarios
 
