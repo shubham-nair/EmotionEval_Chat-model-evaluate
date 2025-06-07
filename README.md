@@ -37,10 +37,10 @@ This project offers a **scientific and automated framework to evaluate the emoti
          "model_version": "Elena",
          "dialogue": [
            {"user_input": "I'm feeling down today.", "bot_reply": "It's okay, you're not alone. Everyone has tough days. Tomorrow will be better."}
-           ... more turns
+          ...
          ]
        }
-       ... more sessions
+       ... 
      ]
      ```
 
