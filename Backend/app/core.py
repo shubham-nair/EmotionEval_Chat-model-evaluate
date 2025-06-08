@@ -1,4 +1,4 @@
-# backend/app/core.py
+# Backend/app/core.py
 import sys, os
 root_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../'))
 if root_path not in sys.path:

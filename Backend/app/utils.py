@@ -1,4 +1,4 @@
-# backend/app/utils.py
+# Backend/app/utils.py
 def check_columns(df, required_cols):
     missing = [c for c in required_cols if c not in df.columns]
     if missing:
