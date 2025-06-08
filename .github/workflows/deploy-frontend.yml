@@ -14,14 +14,14 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
-      
+
       - name: Install dependencies
-        run: npm install --prefix Frontend
-      
+        run: npm install --prefix frontend
+
       - name: Build
-        run: npm run build --prefix Frontend
-      
+        run: npm run build --prefix frontend
+
       - name: Deploy
-        run: npm run deploy --prefix Frontend
+        run: npm run deploy --prefix frontend
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
