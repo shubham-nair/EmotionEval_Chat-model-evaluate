@@ -1,8 +1,6 @@
-fastapi
-uvicorn
-pandas
-bert
-snownlp  
-scipy
-
-
+fastapi==0.115.2
+uvicorn==0.34.0
+pandas==2.3.0
+bert==2.2.0
+snownlp==0.12.3
+scipy==1.15.3
