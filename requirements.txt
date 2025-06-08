@@ -5,7 +5,7 @@ sqlalchemy
 # pymysql            # 用MySQL数据库时需要
 # psycopg2-binary    # 用Postgres数据库时需要
 bert
-json
+# json
 snownlp  
 
 
