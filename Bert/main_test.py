@@ -35,7 +35,30 @@ def run_bert_judge(df: pd.DataFrame):
     detail_df = to_dataframe(results)
     summary_df = aggregate_summary(detail_df)
 
+    print("====== detail_df.columns ======")
+    print(detail_df.columns)
+    print(detail_df.head())
+    print("====== summary_df.columns ======")
+    print(summary_df.columns)
+    print(summary_df.head())
+
+
     return {
         "detail": detail_df.to_dict(orient="records"),
         "summary": summary_df.to_dict(orient="records")
     }
+if __name__ == "__main__":
+    import pandas as pd
+
+    # 构造一个简单的测试 DataFrame
+    data = [
+        {"session_id": "s1", "model_version": "A", "user_input": "hello", "bot_reply": "hi"},
+        {"session_id": "s2", "model_version": "B", "user_input": "good", "bot_reply": "great"},
+    ]
+    df = pd.DataFrame(data)
+
+    result = run_bert_judge(df)
+    print("======= detail =======")
+    print(result["detail"])
+    print("======= summary =======")
+    print(result["summary"])

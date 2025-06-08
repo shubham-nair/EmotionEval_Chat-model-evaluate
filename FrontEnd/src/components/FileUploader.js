@@ -1,30 +1,34 @@
-import React, { useRef } from 'react';
-import { uploadFile } from '../services/api';
+import React, { useState } from 'react';
+import { uploadFile } from './services/api';
 
-const FileUploader = ({ onResult }) => {
-  const fileInput = useRef(null);
+export default function App() {
+  const [result, setResult] = useState(null);
+  const [error, setError] = useState('');
 
-  const handleUpload = async (e) => {
-    const file = e.target.files[0];
-    if (!file) return;
+  const handleUpload = async (file) => {
     try {
-      const result = await uploadFile(file);
-      onResult(result);  // 将后端返回结果传递给App
+      const res = await uploadFile(file);
+      setResult(res);
+      setError('');
     } catch (err) {
-      alert('上传失败，请检查后端服务和文件格式');
+      setError(err.message || '上传失败');
+      setResult(null);
     }
   };
 
   return (
-    <div style={{ marginBottom: 20 }}>
-      <input
-        type="file"
-        accept=".json,.csv"
-        ref={fileInput}
-        onChange={handleUpload}
-      />
+    <div>
+      <FileUploader onUpload={handleUpload} />
+      {error && <div style={{ color: 'red' }}>{error}</div>}
+      {result && <div>{JSON.stringify(result)}</div>}
     </div>
   );
-};
+}
 
-export default FileUploader;
+function FileUploader({ onUpload }) {
+  const handleUpload = (e) => {
+    const file = e.target.files[0];
+    if (file) onUpload(file);
+  };
+  return <input type="file" accept=".json,.csv" onChange={handleUpload} />;
+}
