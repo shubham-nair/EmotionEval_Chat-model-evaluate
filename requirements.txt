@@ -7,7 +7,7 @@ sqlalchemy
 bert
 # json
 snownlp  
-
+scipy
 
 #torch              # pytorch深度学习框架
 #transformers       # huggingface模型（如bert、roberta等）
