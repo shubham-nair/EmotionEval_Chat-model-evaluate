@@ -121,3 +121,52 @@ EmotionEval empowers teams to:
 * Support **continuous experimentation** for emotional AI products.
 
 
+
+---
+
+# 🖥️ FastAPI Backend for Model Evaluation (API)
+
+This repo now includes a production-ready FastAPI backend for chat/emotion evaluation, supporting asynchronous preloading of the BERT model/tokenizer for fast first request performance.
+
+## Features
+- FastAPI backend for chat/emotion evaluation
+- Asynchronous preloading of BERT model/tokenizer at startup for fast first request
+- Compatible with EC2 deployment
+
+## Backend Requirements
+See `requirements.txt` for all dependencies. Key packages:
+- fastapi
+- uvicorn
+- pandas
+- bert-score (for semantic evaluation)
+- snownlp
+- scipy
+- pydantic
+- sqlalchemy
+
+## Setup & Usage (Backend)
+
+1. **Install dependencies:**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+2. **Run the backend:**
+   ```bash
+   uvicorn Backend.app.main:app --host 0.0.0.0 --port 8000 --reload
+   ```
+   On first startup, the backend asynchronously preloads the BERT model/tokenizer for Chinese (zh) using a dummy call. You will see a message like `Model and tokenizer preloaded.` in the logs.
+
+3. **API Usage:**
+   - Upload a file to `/evaluate/file` (see API docs at `/docs`).
+   - The first request after startup will be fast, with no cold start lag.
+
+## EC2 Hosting Notes
+- Ensure ports are open in your EC2 security group (default: 8000).
+- Python 3.8+ recommended.
+- All dependencies are installable via pip.
+- For production, consider running with a process manager (e.g., systemd, supervisor, or Docker).
+
+## Change Log
+- 2025-06-08: Added async model/tokenizer preloading at FastAPI startup for efficient serving.
+- Updated requirements.txt to include `bert-score` and pin major versions for reliability.

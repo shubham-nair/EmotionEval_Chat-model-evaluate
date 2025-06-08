@@ -1,6 +1,6 @@
 import pandas as pd
-from Bert.Utils.sentiment_utils import analyze_sentiment, calc_emotion_slope, calc_cumulative_gain
-from Bert.Utils.bertscore_utils import evaluate_bertscore
+from ..Utils.sentiment_utils import analyze_sentiment, calc_emotion_slope, calc_cumulative_gain
+from ..Utils.bertscore_utils import evaluate_bertscore
 
 
 def session_metrics(session, sentiment_funs, bertscore_fun):
