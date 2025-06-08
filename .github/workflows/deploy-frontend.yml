@@ -10,19 +10,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
+      
       - name: Install dependencies
-        working-directory: frontend
-        run: npm install
+        run: npm install --prefix Frontend
+      
       - name: Build
-        working-directory: frontend
-        run: npm run build
+        run: npm run build --prefix Frontend
+      
       - name: Deploy
-        working-directory: frontend
-        run: npm run deploy
+        run: npm run deploy --prefix Frontend
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-
