@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+pandas
+sqlalchemy
+pymysql            # 用MySQL数据库时需要
+psycopg2-binary    # 用Postgres数据库时需要
+
+torch              # pytorch深度学习框架
+transformers       # huggingface模型（如bert、roberta等）
+scikit-learn       # 常用机器学习工具
+sentence-transformers # 如果有用
