@@ -5,7 +5,7 @@ from Utils.bertscore_utils import evaluate_bertscore
 from metrics.metrics import session_metrics, to_dataframe, aggregate_summary
 
 if __name__ == "__main__":
-    # 数据路径建议绝对路径或项目相对路径
+
     with open("Logs/chat_logs.json", "r", encoding="utf-8") as f:
         data = json.load(f)
 
