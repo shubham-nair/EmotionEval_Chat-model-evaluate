@@ -1,8 +1,8 @@
 import json
 import pandas as pd
-from Utils.sentiment_utils import analyze_sentiment, calc_emotion_slope, calc_cumulative_gain
-from Utils.bertscore_utils import evaluate_bertscore
-from metrics.metrics import session_metrics, to_dataframe, aggregate_summary
+from .Utils.sentiment_utils import analyze_sentiment, calc_emotion_slope, calc_cumulative_gain
+from .Utils.bertscore_utils import evaluate_bertscore
+from .metrics.metrics import session_metrics, to_dataframe, aggregate_summary
 
 if __name__ == "__main__":
 
