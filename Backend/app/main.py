@@ -19,7 +19,8 @@ async def startup_event():
 
 # 添加 CORS 中间件
 origins = [
-    "http://localhost:3000",
+    "http://localhost:3000",  # For local React development
+    "https://d99skwi58at3k.cloudfront.net", # For deployed React frontend
     "http://127.0.0.1:3000",
     # 你也可以根据需要添加其他允许的前端地址
 ]

@@ -1,11 +1,25 @@
-from sentence_transformers import util
+import sentence_transformers
 from Backend.app.model_loader import sentence_model # Import the globally loaded model
 import torch
 
 def evaluate_bertscore(user_inputs, bot_replies):
-    if sentence_model is None:
+    print(f"--- Inside evaluate_bertscore ---")
+    print(f"ID of imported sentence_model (top-level import): {id(sentence_model)}, Value: {sentence_model}")
+    
+    # Try to access the module directly during the call
+    try:
+        import Backend.app.model_loader as runtime_model_loader
+        print(f"ID of runtime_model_loader.sentence_model: {id(runtime_model_loader.sentence_model)}, Value: {runtime_model_loader.sentence_model}")
+        # If the top-level import is None, but this one is not, let's try using this one
+        current_model_to_use = runtime_model_loader.sentence_model if sentence_model is None else sentence_model
+    except Exception as e_import:
+        print(f"Error importing Backend.app.model_loader at runtime: {e_import}")
+        current_model_to_use = sentence_model # Fallback to the top-level imported one
+
+    print(f"Model to be used for encoding: {id(current_model_to_use)}, Value: {current_model_to_use}")
+    if current_model_to_use is None:
         # This case should ideally not be hit if preloading works
-        print("Error: SentenceTransformer model not loaded.")
+        print(f"Error: SentenceTransformer model (current_model_to_use) is None.")
         # Return dummy scores to avoid crashing, but log error
         return [0.0], [0.0], [0.0]
 
@@ -18,18 +32,18 @@ def evaluate_bertscore(user_inputs, bot_replies):
         return [0.0], [0.0], [0.0]
 
     try:
-        user_embeddings = sentence_model.encode(c_user_inputs, convert_to_tensor=True)
-        bot_embeddings = sentence_model.encode(c_bot_replies, convert_to_tensor=True)
+        user_embeddings = current_model_to_use.encode(c_user_inputs, convert_to_tensor=True)
+        bot_embeddings = current_model_to_use.encode(c_bot_replies, convert_to_tensor=True)
 
         # Calculate cosine similarity
         # Handles cases: single sentence vs single sentence, or list vs list (pairwise)
-        cosine_scores_tensor = util.cos_sim(user_embeddings, bot_embeddings)
+        cosine_similarity_matrix = sentence_transformers.util.cos_sim(user_embeddings, bot_embeddings)
 
         scores = []
         if len(c_user_inputs) == len(c_bot_replies):
             # Pairwise comparison for lists of the same length
             for i in range(len(c_user_inputs)):
-                scores.append(round(cosine_scores_tensor[i][i].item(), 4))
+                scores.append(round(cosine_similarity_matrix[i][i].item(), 4))
         elif len(c_user_inputs) == 1 and len(c_bot_replies) > 0:
             # One user input vs multiple bot replies (take max similarity to the single user input)
             # Or average, or similarity to first bot reply. For now, let's do first vs first for simplicity if lengths differ significantly.

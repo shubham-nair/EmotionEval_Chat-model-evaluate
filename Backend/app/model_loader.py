@@ -10,5 +10,6 @@ async def preload_model():
     try:
         sentence_model = SentenceTransformer('all-MiniLM-L6-v2')
         print("SentenceTransformer model loaded successfully from model_loader.")
+        print(f"ID of sentence_model in model_loader after load: {id(sentence_model)}")
     except Exception as e:
         print(f"Error loading SentenceTransformer model in model_loader: {e}")
