@@ -41,6 +41,7 @@ regex
 requests
 safetensors
 scipy
+sentence-transformers
 setuptools
 six
 sniffio
@@ -56,4 +57,4 @@ typing-extensions
 typing-inspection
 tzdata
 urllib3
-uvicorn
+uvicorn[standard]==0.34.0

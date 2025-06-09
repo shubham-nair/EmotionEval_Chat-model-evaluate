@@ -100,6 +100,53 @@ python main.py
 * **Output**: Parquet/CSV for BI/ML, real-time reporting, or historical model tracking.
 
 
+## 🌐 FastAPI Backend Server
+
+This project also includes a FastAPI backend server located in the `Backend/` directory, designed for real-time evaluation of chat interactions via API endpoints. It uses a lightweight SentenceTransformer model for efficient semantic similarity calculation.
+
+### 1. Setup Environment (using uv)
+
+It's recommended to use `uv` for fast virtual environment creation and package installation.
+
+```bash
+# Navigate to the project root directory
+cd /path/to/EmotionEval_Chat-model-evaluate
+
+# Create a virtual environment using uv (e.g., named .venv)
+uv venv .venv
+
+# Activate the virtual environment
+# On Linux/macOS:
+source .venv/bin/activate
+# On Windows (Command Prompt/PowerShell):
+# .venv\Scripts\activate
+```
+
+### 2. Install Dependencies
+
+Once the virtual environment is activated, install the required packages:
+
+```bash
+# Ensure you are in the project root directory where requirements.txt is located
+uv pip install -r requirements.txt
+```
+This will install all necessary dependencies, including `fastapi` and `uvicorn[standard]` for the server.
+
+### 3. Run the FastAPI Server
+
+From the project root directory (with the virtual environment activated):
+
+```bash
+uvicorn Backend.app.main:app --host 0.0.0.0 --port 8000 --reload
+```
+
+*   `--host 0.0.0.0`: Makes the server accessible from your network.
+*   `--port 8000`: Runs the server on port 8000.
+*   `--reload`: Enables auto-reload when code changes are detected (useful for development).
+
+The API documentation (Swagger UI) will be available at `http://localhost:8000/docs` or `http://your-server-ip:8000/docs`.
+
+
 
 ## 📦 Requirements
 
